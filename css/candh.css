@@ -1,0 +1,86 @@
+/*
+  dk brown: rgba(125,116,87,1)
+  med brown: rgba(178,164,125,1)
+  lght brown: rgba(204,188,143,1)
+  red: rgba(237,84,86,1)
+  yellow: rgba(253,216,37,1)
+*/
+
+header,
+h1,
+#main,
+section,
+p,
+footer {
+  margin: 0;
+  padding: 0;
+}
+
+/* TYPE STUFF */
+body {
+  background: white;
+  color: black;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+a {
+  color:black;
+}
+
+header h1,
+header h1 a {
+  font-size: 13px;
+}
+
+header ol,
+header ol li,
+header ol li a {
+  font-size: 13px;
+}
+
+#main section p {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 45px;
+  margin-bottom: 15px;
+  /**/
+}
+
+footer {
+  }
+
+/* LAYOUT STUFF */
+.left {float:left;}
+.right {float:right;}
+.clear {clear:both;display:block;}
+
+body {
+  padding: 30px;
+}
+
+div#container {
+  width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 10px;;
+}
+
+#main {
+  margin-bottom: 20px;
+}
+
+#main section.middle {
+  background: url(../img/middle.png) center center no-repeat;
+  height: 368px;
+  width: 750px;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* header design + styles */
+
