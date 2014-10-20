@@ -1,0 +1,535 @@
+@import url('http://fonts.googleapis.com/css?family=Oswald:300,400,700');
+@import url('http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic');
+@import url('http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic,900,900italic,300italic,300');
+/*************************************************/
+/*************************************************/
+/* »»»»» Import and merge sheets together «««««« */
+/*************************************************/
+/*************************************************/
+/* ============================ RESET ============================ */
+/* ===== Eric Meyer Reset ===== */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1.33;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ===== CUSTOM RESET ===== */
+object {
+  outline: none;
+  display: block;
+  overflow: hidden;
+}
+/* force redraw on IE8, fix outline/scroll bug on Firefox 3.6, remove unnecessary margin (copied from swffit)  */
+textarea {
+  overflow: auto;
+}
+/* fix IE */
+iframe {
+  border: 0;
+}
+/* fix line-height [https://gist.github.com/413930] */
+sup,
+sub {
+  line-height: 0;
+  font-size: .75em;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* ============================ /RESET ============================ */
+/*************************************************/
+/*************************************************/
+/* »»»»»» Global C and H style variables ««««««« */
+/*************************************************/
+/*************************************************/
+.oswald {
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.lato {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+}
+.merriweather {
+  font-family: 'Merriweather', Georgia, 'times new roman', Times, serif;
+}
+.text-center {
+  text-align: center;
+}
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+button.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 60px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 20px;
+  background: transparent url('/img/hammers-mini.png') center center no-repeat;
+  background-size: contain;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 20;
+  cursor: pointer;
+}
+/* *********************************************** */
+/* *********************************************** */
+/* »»»»»»» Global C and H styles for site «««««««« */
+/* *********************************************** */
+/* *********************************************** */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+/* = header styles */
+header {
+  background: transparent url('https://unsplash.it/g/1600/800?image=491') center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 20px 0 0;
+  text-align: center;
+  height: 235px;
+}
+header h1 {
+  margin: 0px auto;
+  padding: 0;
+  width: 352px;
+  height: 154px;
+  margin-bottom: 20px;
+}
+header h1 > a {
+  display: block;
+  width: 352px;
+  height: 154px;
+  background: transparent url('/img/candh-logo-white.png') center center no-repeat;
+  background-size: contain;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+header nav ul {
+  background: black;
+  border-left: none;
+  border-right: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header nav ul.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+}
+header nav ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li a {
+  background: black;
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  /**/
+  -webkit-transition: background 500ms ease, color 500ms ease;
+  -moz-transition: background 500ms ease, color 500ms ease;
+  -ms-transition: background 500ms ease, color 500ms ease;
+  -o-transition: background 500ms ease, color 500ms ease;
+  transition: background 500ms ease, color 500ms ease;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+header nav ul li a:hover,
+header nav ul li.active a,
+header nav ul li a.active {
+  background: white;
+  color: black;
+}
+header nav ul li a:active {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+/* /end header styles */
+/* = footer styles */
+footer {
+  margin: 100px auto;
+  text-align: center;
+}
+/* /end footer styles */
+/* = middle graphic stuff... */
+section.middle {
+  position: relative;
+  max-width: 1000px;
+  height: 368px;
+  margin: 20px auto -75px;
+}
+section.middle:before {
+  content: '';
+  display: block;
+  position: absolute;
+  opacity: .25;
+  width: 100%;
+  max-width: 1000px;
+  height: 368px;
+  background: transparent url('/img/hammers.png') center center no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+section.middle p {
+  position: absolute;
+  width: 100%;
+  height: 368px;
+  background: transparent url('/img/middletext.png') center center no-repeat;
+  background-size: contain;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 2;
+}
+/* = main section styles */
+main section {
+  padding: 100px 0;
+}
+/* = project links */
+#projects ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#projects ul li {
+  display: inline-block;
+}
+#projects ul li.project-preview {
+  width: 200px;
+  margin: 0 40px;
+  cursor: pointer;
+}
+#projects ul li.project-preview img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  border-radius: 50%;
+  background: wheat;
+}
+#projects ul li.project-preview p {
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: .66em;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+/* = about text */
+#about,
+#contact,
+#projects .overlay p {
+  max-width: 800px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.618;
+  font-family: 'Merriweather', Georgia, 'times new roman', Times, serif;
+}
+#about,
+#contact {
+  border-bottom: 4px double black;
+}
+#about {
+  background: transparent url('/img/rowhouses.png') center top no-repeat;
+  padding-top: 321px;
+}
+#about p {
+  margin-bottom: 1em;
+}
+#about p:first-of-type {
+  font-size: 144%;
+  font-weight: 300;
+}
+/* = Contact form */
+ul.contact-info {
+  border-bottom: 1px solid black;
+  padding-bottom: 2em;
+}
+#wufoo-k1w15b2z04cgvvi {
+  position: relative;
+  left: 18%;
+  margin-top: 2em;
+}
+/* *********************************************** */
+/* *********************************************** */
+/* »»»»»»» Project Overlay Related Styles «««««««« */
+/* *********************************************** */
+/* *********************************************** */
+#projects ul li.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  border: 20px solid black;
+  margin: 0;
+  width: 100%;
+  background: white;
+  padding: 40px;
+  z-index: 5;
+}
+#projects .overlay h1 {
+  font-size: 2em;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: .25em;
+}
+#projects .overlay p {
+  margin-bottom: 2em;
+}
+#projects .overlay ul.images {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+#projects .overlay ul.images li.img-preview {
+  height: auto;
+  width: calc(16.66666667%);
+  margin: 0;
+  padding: .5%;
+}
+#projects .overlay ul.images li img {
+  width: 100%;
+  height: auto;
+}
+#projects .overlay ul.images li.img-detail {
+  background: rgba(255, 255, 255, 0.91);
+  border: 20px black solid;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+#projects .overlay ul.images li.img-detail:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.5%;
+  /* Adjusts for spacing */
+}
+#projects .overlay ul.images li.img-detail img {
+  max-height: 99%;
+  max-width: 99%;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+.img-detail button {
+  width: 33%;
+  position: absolute;
+  float: none;
+  display: block;
+  z-index: 10;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background: transparent;
+  border: none;
+}
+.img-detail button.left {
+  left: 0;
+}
+.img-detail button.right {
+  right: 0;
+}
+.img-detail button.left:hover {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+}
+.img-detail button.right:hover {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.25));
+}
+.overlay > div {
+  margin-bottom: 20px;
+}
+.overlay ul.project-nav li {
+  margin: 0 10px;
+}
+.overlay ul.project-nav li button {
+  width: 140px;
+  /**/
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  background: transparent;
+  padding: 10px;
+}
+.overlay ul.project-nav li button:hover {
+  /*   background: linear-gradient( 0deg, rgba(0,0,0,.1), rgba(255,255,255,0)); */
+  border-color: black;
+  outline: none;
+}
+.overlay ul.project-nav li button:active {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-color: black;
+  outline: none;
+}
