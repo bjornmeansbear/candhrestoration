@@ -12,6 +12,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@-ms-viewport {
+  width: device-width;
+}
 html,
 body,
 div,
@@ -188,25 +191,6 @@ sub {
   white-space: nowrap;
   overflow: hidden;
 }
-button.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 60px;
-  height: 50px;
-  font-size: 20px;
-  line-height: 20px;
-  background: transparent url('/img/hammers-mini.png') center center no-repeat;
-  background-size: contain;
-  border: none;
-  padding: 0;
-  margin: 0;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  z-index: 20;
-  cursor: pointer;
-}
 /* *********************************************** */
 /* *********************************************** */
 /* »»»»»»» Global C and H styles for site «««««««« */
@@ -227,30 +211,45 @@ a {
 }
 /* = header styles */
 header {
-  background: transparent url('https://unsplash.it/g/1600/800?image=491') center center no-repeat;
-  background-attachment: fixed;
+  background: #a9a9a9 url('https://unsplash.it/g/1600/800?image=491') center center no-repeat;
   background-size: cover;
   margin: 0;
   padding: 20px 0 0;
-  text-align: center;
   height: 235px;
+  width: 100%;
+  text-align: center;
 }
 header h1 {
   margin: 0px auto;
   padding: 0;
-  width: 352px;
+  width: 280px;
   height: 154px;
   margin-bottom: 20px;
 }
 header h1 > a {
   display: block;
-  width: 352px;
+  width: 280px;
   height: 154px;
   background: transparent url('/img/candh-logo-white.png') center center no-repeat;
   background-size: contain;
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  /* = header styles */
+  header {
+    height: 235px;
+    background-attachment: fixed;
+  }
+  header h1 {
+    width: 352px;
+    height: 154px;
+  }
+  header h1 > a {
+    width: 352px;
+    height: 154px;
+  }
 }
 header nav ul {
   background: black;
@@ -259,6 +258,7 @@ header nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  height: 41px;
 }
 header nav ul.fixed {
   position: fixed;
@@ -288,6 +288,7 @@ header nav ul li a {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
+  font-size: 90%;
 }
 header nav ul li a:hover,
 header nav ul li.active a,
@@ -300,6 +301,11 @@ header nav ul li a:active {
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
   color: black;
 }
+@media (min-width: 768px) {
+  header nav ul li a {
+    font-size: 100%;
+  }
+}
 /* /end header styles */
 /* = footer styles */
 footer {
@@ -311,7 +317,7 @@ footer {
 section.middle {
   position: relative;
   max-width: 1000px;
-  height: 368px;
+  height: 250px;
   margin: 20px auto -75px;
 }
 section.middle:before {
@@ -321,7 +327,7 @@ section.middle:before {
   opacity: .25;
   width: 100%;
   max-width: 1000px;
-  height: 368px;
+  height: 250px;
   background: transparent url('/img/hammers.png') center center no-repeat;
   background-size: contain;
   z-index: 1;
@@ -329,13 +335,25 @@ section.middle:before {
 section.middle p {
   position: absolute;
   width: 100%;
-  height: 368px;
+  height: 250px;
   background: transparent url('/img/middletext.png') center center no-repeat;
   background-size: contain;
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
   z-index: 2;
+}
+@media (min-width: 768px) {
+  section.middle {
+    height: 368px;
+    margin: 20px auto -75px;
+  }
+  section.middle:before {
+    height: 368px;
+  }
+  section.middle p {
+    height: 368px;
+  }
 }
 /* = main section styles */
 main section {
@@ -350,18 +368,20 @@ main section {
 }
 #projects ul li {
   display: inline-block;
+  vertical-align: top;
 }
 #projects ul li.project-preview {
   width: 200px;
   margin: 0 40px;
   cursor: pointer;
+  margin-bottom: 2em;
 }
 #projects ul li.project-preview img {
   width: 200px;
   height: 200px;
   display: block;
   border-radius: 50%;
-  background: wheat;
+  background: darkgray;
 }
 #projects ul li.project-preview p {
   font-size: 20px;
@@ -403,11 +423,13 @@ main section {
 ul.contact-info {
   border-bottom: 1px solid black;
   padding-bottom: 2em;
+  margin-bottom: 2em;
 }
-#wufoo-k1w15b2z04cgvvi {
-  position: relative;
-  left: 18%;
-  margin-top: 2em;
+@media (min-width: 768px) {
+  #wufoo-k1w15b2z04cgvvi {
+    position: relative;
+    left: 18%;
+  }
 }
 /* *********************************************** */
 /* *********************************************** */
@@ -421,12 +443,31 @@ ul.contact-info {
   bottom: 0;
   left: 0;
   overflow: auto;
-  border: 20px solid black;
+  border: 10px solid black;
   margin: 0;
   width: 100%;
   background: white;
-  padding: 40px;
+  padding: 20px;
   z-index: 5;
+}
+.overlay button.close {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 20px;
+  background: transparent url('/img/hammers-mini.png') center center no-repeat;
+  background-size: contain;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 20;
+  cursor: pointer;
 }
 #projects .overlay h1 {
   font-size: 2em;
@@ -447,16 +488,50 @@ ul.contact-info {
 }
 #projects .overlay ul.images li.img-preview {
   height: auto;
-  width: calc(16.66666667%);
+  width: calc(33.33333333%);
   margin: 0;
   padding: .5%;
+}
+@media (min-width: 480px) {
+  #projects .overlay ul.images li.img-preview {
+    height: auto;
+    width: calc(25%);
+    margin: 0;
+    padding: .5%;
+  }
+}
+@media (min-width: 768px) {
+  #projects ul li.overlay {
+    border: 20px solid black;
+    padding: 40px;
+  }
+  .overlay button.close {
+    top: 30px;
+    right: 30px;
+    width: 60px;
+    height: 50px;
+  }
+  #projects .overlay ul.images li.img-preview {
+    height: auto;
+    width: calc(20%);
+    margin: 0;
+    padding: .5%;
+  }
+}
+@media (min-width: 960px) {
+  #projects .overlay ul.images li.img-preview {
+    height: auto;
+    width: calc(16.66666667%);
+    margin: 0;
+    padding: .5%;
+  }
 }
 #projects .overlay ul.images li img {
   width: 100%;
   height: auto;
 }
 #projects .overlay ul.images li.img-detail {
-  background: rgba(255, 255, 255, 0.91);
+  background: rgba(255, 255, 255, 0.91) url('/img/loading.gif') center center no-repeat;
   border: 20px black solid;
   position: fixed;
   top: 0;

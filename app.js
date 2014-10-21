@@ -1,12 +1,12 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var Nav,Projects,React,data;React=require("react"),Projects=require("./views/main/projects"),Nav=require("./views/header/nav"),data=require("./data/data.json"),module.exports={blastoff:function(){var e,t,a,r;return r=window.app=this,t=document.getElementById("main-nav"),a=data,a.client=!0,React.renderComponent(Nav(a),t),e=document.getElementById("projects"),this.container=React.renderComponent(Projects({client:!0}),e)}},module.exports.blastoff();
 },{"./data/data.json":2,"./views/header/nav":4,"./views/main/projects":7,"react":170}],2:[function(require,module,exports){
-module.exports={"title":"C&H Restoration & Renovation, LLC","tagline":"Specializing in the Restoration & Updating of Historic Homes","footer":"©2014 by C and H Restoration and Renovation, llc.","menu":[{"title":"Projects","link":"projects"},{"title":"About","link":"about"},{"title":"Contact","link":"contact"}]}
+module.exports={"title":"C&H Restoration & Renovation, LLC","tagline":"Specializing in the Restoration & Updating of Historic Homes","footer":"© 2014 by C&H Restoration and Renovation, llc.","menu":[{"title":"Projects","link":"projects"},{"title":"About","link":"about"},{"title":"Contact","link":"contact"}]}
 },{}],3:[function(require,module,exports){
 module.exports=[
   {
-    "title": "1308 Bolton St.",
-    "body": "",
+    "title": "The Gargoyle House",
+    "body": "<p>body text about the project</p>\n",
     "key": "1308-bolton",
     "images": [
       "1308-bolton/01.jpg",
@@ -78,8 +78,8 @@ module.exports=[
     "mainImg": "1308-bolton/01.jpg"
   },
   {
-    "title": "1423 Bolton St.",
-    "body": "",
+    "title": "Bolton",
+    "body": "<p>body text about the project</p>\n",
     "key": "1423-bolton",
     "images": [
       "1423-bolton/1.jpg",
@@ -102,7 +102,7 @@ module.exports=[
     "mainImg": "1423-bolton/1.jpg"
   },
   {
-    "title": "144 Lanvale St.",
+    "title": "Lanvale",
     "body": "<p>body text about the project</p>\n",
     "key": "144-lanvale",
     "images": [
